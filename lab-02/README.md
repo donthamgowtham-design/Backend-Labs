@@ -2,7 +2,7 @@
 
 **Name:** GOWTHAM YADAV · **Registration number:** 252U1R8017 · **Section:** CSE-QE-2A
 
-**Live link:** Not deployed – SQLite is a local file-based database requiring persistent disk storage; complete CRUD operations and database verifications are documented with Postman and SQLite CLI screenshots below.
+**Live link:** https://backend-lab-02-1rcc.onrender.com/books/
 
 ## How to run
 

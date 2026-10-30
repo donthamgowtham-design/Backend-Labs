@@ -35,6 +35,11 @@ const validBook = ({ title, author, price, pages }) =>
   Number.isInteger(price) && price >= 0 &&
   Number.isInteger(pages) && pages > 0;
 
+// Root route -> redirect to /books/
+app.get('/', (req, res) => {
+  res.redirect('/books/');
+});
+
 // GET all books
 app.get('/books/', async (req, res) => {
   const books = await db.all('SELECT * FROM book ORDER BY id;');
