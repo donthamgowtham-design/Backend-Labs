@@ -13,3 +13,5 @@ Repository for Backend Development Framework (BDF) lab assignments.
 | Lab | Title | Description | Folder |
 | --- | --- | --- | --- |
 | Lab 1 | Node.js and Express server | Simple HTTP server and Express server with routing | [lab-01](./lab-01) |
+| Lab 2 | SQLite database and CRUD routes | Express server with SQLite database and CRUD operations | [lab-02](./lab-02) |
+

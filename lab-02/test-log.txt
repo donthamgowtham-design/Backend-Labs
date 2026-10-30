@@ -1,0 +1,63 @@
+
+### 1. GET /books/ (all)
+[{"id":1,"title":"The Alchemist","author":"Paulo Coelho","price":299,"pages":208},{"id":2,"title":"Wings of Fire","author":"A. P. J. Abdul Kalam","price":250,"pages":180},{"id":3,"title":"Atomic Habits","author":"James Clear","price":499,"pages":320},{"id":4,"title":"Clean Code","author":"Robert C. Martin","price":650,"pages":464},{"id":5,"title":"The Pragmatic Programmer ...
+
+### 2. GET /books/3/ (one)
+{"id":3,"title":"Atomic Habits","author":"James Clear","price":499,"pages":320}
+[status 200]
+
+### 3. GET /books/999/ (not found)
+{"error":"Book not found"}
+[status 404]
+
+### 4. POST /books/ (add)
+{"message":"Book added successfully","bookId":11}
+[status 201]
+--- CLI after POST:
+id  title    author             price  pages
+--  -------  -----------------  -----  -----
+11  Sapiens  Yuval Noah Harari  450    443  
+
+### 5. POST invalid body (400)
+{"error":"title, author (text) and price, pages (whole numbers) are required"}
+[status 400]
+
+### 6. PUT /books/11/ (update)
+{"message":"Book updated successfully"}
+[status 200]
+--- CLI after PUT:
+id  title              author             price  pages
+--  -----------------  -----------------  -----  -----
+11  Sapiens (Revised)  Yuval Noah Harari  499    450  
+
+### 7. PUT /books/999/ (404)
+{"error":"Book not found"}
+[status 404]
+
+### 8. DELETE /books/11/
+{"message":"Book deleted successfully"}
+[status 200]
+--- CLI after DELETE (rows with id=11):
+0
+
+### 9. DELETE /books/11/ again (404)
+{"error":"Book not found"}
+[status 404]
+
+### 10. Bad JSON (400)
+{"error":"Invalid JSON body"}
+[status 400]
+
+### 11. Unknown path (404)
+{"error":"Route not found"}
+[status 404]
+
+### 12. SQL injection attempt on GET
+{"error":"Book not found"}
+[status 404]
+
+### 13. SQL injection attempt on DELETE
+{"error":"Book not found"}
+[status 404]
+--- table still intact, rows:
+10
